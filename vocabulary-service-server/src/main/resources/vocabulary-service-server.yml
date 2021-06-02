@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+logging:
+  file: logs/vocabulary-service-server.log
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      path-mapping:
+        health: up
+      exposure:
+        include: "*"
+
+db: h2
+
+# Choose which database are you going to use and updated configuration based on your requirements.
+vocabulary-service:
+  db:
+    postgres:
+      url: jdbc:postgresql://localhost:5432/vocabulary
+      user: postgres
+      password: password
+    liquibase:
+      enabled: true
+      drop-first: true
