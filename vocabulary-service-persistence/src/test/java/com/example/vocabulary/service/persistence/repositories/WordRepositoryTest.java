@@ -1,6 +1,7 @@
 package com.example.vocabulary.service.persistence.repositories;
 
 import com.example.vocabulary.service.persistence.VocabularyServicePersistenceConfig;
+import com.example.vocabulary.service.persistence.entities.WordEntity;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,15 +13,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {VocabularyServicePersistenceConfig.class})
-@SpringBootTest(properties = { "db=h2" })
-public class TransactionRepositoryTest {
+@SpringBootTest(properties = {"db=h2"})
+public class WordRepositoryTest {
 
     @Autowired
-    private TransactionRepository transactionRepository;
+    private WorldRepository WorldRepository;
 
     @Test
     void test_create() {
-        TransactionEntity entity = new TransactionEntity();
-        transactionRepository.save(entity);
+        WordEntity entity = new WordEntity();
+        WorldRepository.save(entity);
     }
 }

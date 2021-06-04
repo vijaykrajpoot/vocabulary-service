@@ -1,15 +1,18 @@
 package com.example.vocabulary.service.persistence.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class Word {
+@Table(name = "WORD")
+public class WordEntity {
 
-    private String id;
-    String word;
-    String meaning;
-    String sentence;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
+    private Long id;
+    private String word;
+    private String meaning;
+    private String sentence;
 
     public String getWord() {
         return word;
@@ -35,12 +38,7 @@ public class Word {
         this.sentence = sentence;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    @Id
-    public String getId() {
+    public Long getId() {
         return id;
     }
 }
