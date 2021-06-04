@@ -1,7 +1,6 @@
 package com.example.vocabulary.service.persistence.repositories;
 
 import com.example.vocabulary.service.persistence.VocabularyServicePersistenceConfig;
-import com.example.vocabulary.service.persistence.entities.TransactionEntity;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
