@@ -1,5 +1,8 @@
 package com.example.vocabulary.service.api;
 
-public interface VocabularyServiceApi  {
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public interface VocabularyServiceApi extends VocabularyApi {
 
 }
