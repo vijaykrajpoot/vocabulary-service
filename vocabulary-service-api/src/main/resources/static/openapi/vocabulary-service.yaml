@@ -64,6 +64,10 @@ paths:
 components:
   schemas:
     Vocabulary:
+      type: array
+      items:
+        $ref: '#/components/schemas/word'
+    word:
       title: a Vocabulary
       description: A Vocabulary
       type: object
