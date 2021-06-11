@@ -11,35 +11,17 @@ info:
     name: Apache-2.0
     url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
 tags:
-  - name: vocabulary
-    description: Vocabulary
+  - name: Vocabulary
+    description: Vocabulary service APIs
 
 paths:
   /vocabulary:
-    post:
-      tags:
-        - vocabulary
-      summary: Add a new vocabulary
-      description: ''
-      operationId: addvocabulary
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/Vocabulary'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Vocabulary'
-        '405':
-          description: Invalid input
     get:
       tags:
-        - vocabulary
+        - Vocabulary
       summary: Find vocabulary by type
       description: Returns vocabulary
-      operationId: getVocabularybyType
+      operationId: getVocabularyByType
       parameters:
         - name: type
           in: query
@@ -61,7 +43,24 @@ paths:
           description: Invalid type supplied
         '404':
           description: Vocabulary not found
-
+    post:
+      tags:
+        - Vocabulary
+      summary: Add a new vocabulary
+      description: ''
+      operationId: addvocabulary
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Vocabulary'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Vocabulary'
+        '405':
+          description: Invalid input
 components:
   schemas:
     Vocabulary:
