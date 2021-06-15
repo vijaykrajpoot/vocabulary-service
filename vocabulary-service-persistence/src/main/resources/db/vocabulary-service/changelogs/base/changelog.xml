@@ -6,7 +6,7 @@
 
     <changeSet author="Archetect" id="create initial tables">
         <createTable tableName="WORD">
-            <column name="ID" type="BIGINT" autoIncrement="true">
+            <column name="WORD_ID" type="BIGINT" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="WORD" type="VARCHAR2"/>
@@ -15,13 +15,24 @@
         </createTable>
 
         <createTable tableName="TYPE">
-            <column name="ID" type="BIGINT" autoIncrement="true">
+            <column name="TYPE_ID" type="BIGINT" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="TYPE" type="VARCHAR2"/>
+            <column name="TYPE_DESCRIPTION" type="VARCHAR2"/>
         </createTable>
 
-
+        <createTable tableName="WORD_TYPE">
+            <column name="WORD_TYPE_ID" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="FK_WORD_ID" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_word_id" referencedTableName="WORD" referencedColumnNames="WORD_ID"/>
+            </column>
+            <column name="FK_WORD_TYPE_ID" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+        </createTable>
 
 
     </changeSet>

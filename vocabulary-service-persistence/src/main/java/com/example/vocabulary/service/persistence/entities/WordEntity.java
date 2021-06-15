@@ -8,7 +8,7 @@ public class WordEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "WORD_ID")
     private Long id;
     private String word;
     private String meaning;
