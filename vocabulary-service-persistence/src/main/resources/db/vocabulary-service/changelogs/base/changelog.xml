@@ -9,10 +9,20 @@
             <column name="ID" type="BIGINT" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
-            <column name="WORD" type="VARCHAR"/>
-            <column name="MEANING" type="VARCHAR"/>
-            <column name="SENTENCE" type="VARCHAR"/>
+            <column name="WORD" type="VARCHAR2"/>
+            <column name="MEANING" type="VARCHAR2"/>
+            <column name="SENTENCE" type="VARCHAR2"/>
         </createTable>
+
+        <createTable tableName="TYPE">
+            <column name="ID" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="TYPE" type="VARCHAR2"/>
+        </createTable>
+
+
+
 
     </changeSet>
 </databaseChangeLog>
