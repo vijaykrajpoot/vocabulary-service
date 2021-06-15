@@ -4,36 +4,44 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet author="Archetect" id="create initial tables">
+    <changeSet author="Archetect" id="1000">
         <createTable tableName="WORD">
             <column name="WORD_ID" type="BIGINT" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="WORD" type="VARCHAR2"/>
+            <column name="TYPE" type="VARCHAR2"/>
             <column name="MEANING" type="VARCHAR2"/>
             <column name="SENTENCE" type="VARCHAR2"/>
         </createTable>
 
-        <createTable tableName="TYPE">
-            <column name="TYPE_ID" type="BIGINT" autoIncrement="true">
+        <createTable tableName="GROUP">
+            <column name="GROUP_ID" type="BIGINT" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
-            <column name="TYPE" type="VARCHAR2"/>
-            <column name="TYPE_DESCRIPTION" type="VARCHAR2"/>
+            <column name="GROUP" type="VARCHAR2"/>
+            <column name="GROUP_DESCRIPTION" type="VARCHAR2"/>
         </createTable>
 
-        <createTable tableName="WORD_TYPE">
-            <column name="WORD_TYPE_ID" type="BIGINT" autoIncrement="true">
+        <createTable tableName="GROUP_TYPE">
+            <column name="GROUP_TYPE_ID" type="BIGINT" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="FK_WORD_ID" type="BIGINT">
                 <constraints nullable="false" foreignKeyName="fk_word_id" referencedTableName="WORD" referencedColumnNames="WORD_ID"/>
             </column>
-            <column name="FK_WORD_TYPE_ID" type="BIGINT" autoIncrement="true">
-                <constraints nullable="false" primaryKey="true"/>
-            </column>
         </createTable>
 
 
+
+
+
     </changeSet>
+
+    <changeSet id="1001" author="vkrajput">
+        <insert tableName="WORD">
+            <column name="WORD" value="HELLO"> </column>
+        </insert>
+    </changeSet>
+
 </databaseChangeLog>
